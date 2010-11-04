@@ -1,0 +1,40 @@
+<h1>Listing articles</h1>
+
+ <%if  current_user %>
+  欢迎你，<%= current_user.email %> 
+  <%= link_to 'logout', user_session_path, :method => 'delete' %> 
+  <% else %>
+  <%=link_to '登录',sigin_path%>
+   <% end%>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Introduction</th>
+    <th>Tag</th>
+    <th>Upload person</th>
+    <th>Post date</th>
+    <th>Author</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= article.title %></td>
+    <td><%= article.introduction %></td>
+    <td><%= article.tag %></td>
+    <td><%= article.upload_person %></td>
+    <td><%= article.post_date %></td>
+    <td><%= article.author %></td>
+    <td><%= link_to 'Show', article %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Article', new_article_path %>

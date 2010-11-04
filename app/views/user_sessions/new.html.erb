@@ -1,0 +1,7 @@
+<% form_for(:user_session, @user_session,:url=>user_session_path) do |form| %>
+  <%= form.label :email %>
+  <%= form.text_field :email %><br/>
+  <%= form.label :password %>
+  <%= form.password_field :password %><br/>
+  <%= form.submit 'sing in' %>
+<% end %>
