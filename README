@@ -1,24 +1,24 @@
-ÎÒµÄÒ»¸öÎÄµµ¹ÜÀíÏµÍ³
+æˆ‘çš„ä¸€ä¸ªæ–‡æ¡£ç®¡ç†ç³»ç»Ÿ
 
-Ä¿±êÊÇ£ºÎÄµµÉÏ´«¹ÜÀí
+ç›®æ ‡æ˜¯ï¼šæ–‡æ¡£ä¸Šä¼ ç®¡ç†
 
-ÏµÍ³»·¾³:windows 7
+ç³»ç»Ÿç¯å¢ƒ:windows 7
 
-¿ª·¢»·¾³£ºruby 1.8.7-p302 rails 3.0.1
+å¼€å‘ç¯å¢ƒï¼šruby 1.8.7-p302 rails 3.0.1
 
 
 
-ÓÃµ½µÄ²å¼ş£º
+ç”¨åˆ°çš„æ’ä»¶ï¼š
 
-paperclip ÎÄ¼şÉÏ´«
-authlogic ÓÃ»§ÈÏÖ¤
+paperclip æ–‡ä»¶ä¸Šä¼ 
+authlogic ç”¨æˆ·è®¤è¯
 
-Õë¶Ôrails 3,Ö±½Óbundle install¾Í¿ÉÒÔ¸ã¶¨²å¼ş°²×°
+é’ˆå¯¹rails 3,ç›´æ¥bundle installå°±å¯ä»¥æå®šæ’ä»¶å®‰è£…
 
-¶ÔÓÚpaperclip²å¼ş£º
-ĞèÒª°²×°ImageMagic,²¢ĞŞ¸Ä#dms/config/intializers/paperclip.rbÖĞµÄÏàÓ¦µÄÄ¿Â¼
+å¯¹äºpaperclipæ’ä»¶ï¼š
+éœ€è¦å®‰è£…ImageMagic,å¹¶ä¿®æ”¹#dms/config/intializers/paperclip.rbä¸­çš„ç›¸åº”çš„ç›®å½•
 
-°²×°ÔËĞĞ£º
+å®‰è£…è¿è¡Œï¼š
 
 bundle install
 rake db:migrate
