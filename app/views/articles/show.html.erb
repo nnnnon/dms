@@ -31,6 +31,9 @@
 </p>
 <%= image_tag @article.article_file.url%>   
 
+<h2>Comments</h2> <%= render @article.comments %> 
+
+<h2>Add a comment:</h2> <%= render "comments/form" %> 
 
 
 <%= link_to 'Edit', edit_article_path(@article) %> |

@@ -1,5 +1,7 @@
 Dms::Application.routes.draw do
-  resources :articles
+  resources :articles do 
+     resources :comments
+  end
   resource :users
   resource :user_session
   

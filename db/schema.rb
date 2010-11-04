@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101102045023) do
+ActiveRecord::Schema.define(:version => 20101104052211) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(:version => 20101102045023) do
     t.string   "article_file_content_type"
     t.integer  "article_file_file_size"
     t.datetime "article_file_updated_at"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "article_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
