@@ -13,42 +13,42 @@
 ActiveRecord::Schema.define(:version => 20101104052211) do
 
   create_table "articles", :force => true do |t|
-    t.string   "title"
-    t.text     "introduction"
-    t.string   "tag"
-    t.string   "upload_person"
-    t.date     "post_date"
-    t.string   "author"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "article_file_file_name"
-    t.string   "article_file_content_type"
-    t.integer  "article_file_file_size"
-    t.datetime "article_file_updated_at"
+    t.string    "title"
+    t.text      "introduction",              :limit => 2147483647
+    t.string    "tag"
+    t.string    "upload_person"
+    t.date      "post_date",                 :limit => 10
+    t.string    "author"
+    t.timestamp "created_at",                :limit => 26
+    t.timestamp "updated_at",                :limit => 26
+    t.string    "article_file_file_name"
+    t.string    "article_file_content_type"
+    t.integer   "article_file_file_size",    :limit => 10
+    t.timestamp "article_file_updated_at",   :limit => 26
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "commenter"
-    t.text     "body"
-    t.integer  "article_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "commenter"
+    t.text      "body",       :limit => 2147483647
+    t.integer   "article_id", :limit => 10
+    t.timestamp "created_at", :limit => 26
+    t.timestamp "updated_at", :limit => 26
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "crypted_password"
-    t.string   "password_salt"
-    t.string   "persistence_token"
-    t.integer  "login_count"
-    t.integer  "failed_login_count"
-    t.datetime "last_request_at"
-    t.datetime "last_login_at"
-    t.datetime "current_login_at"
-    t.string   "current_login_ip"
-    t.string   "last_login_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "email"
+    t.string    "crypted_password"
+    t.string    "password_salt"
+    t.string    "persistence_token"
+    t.integer   "login_count",        :limit => 10
+    t.integer   "failed_login_count", :limit => 10
+    t.timestamp "last_request_at",    :limit => 26
+    t.timestamp "last_login_at",      :limit => 26
+    t.timestamp "current_login_at",   :limit => 26
+    t.string    "current_login_ip"
+    t.string    "last_login_ip"
+    t.timestamp "created_at",         :limit => 26
+    t.timestamp "updated_at",         :limit => 26
   end
 
 end

@@ -1,0 +1,25 @@
+我的一个文档管理系统
+
+目标是：文档上传管理
+
+系统环境:windows 7
+
+开发环境：ruby 1.8.7-p302 rails 3.0.1
+
+
+
+用到的插件：
+
+paperclip 文件上传
+authlogic 用户认证
+
+针对rails 3,直接bundle install就可以搞定插件安装
+
+对于paperclip插件：
+需要安装ImageMagic,并修改#dms/config/intializers/paperclip.rb中的相应的目录
+
+安装运行：
+
+bundle install
+rake db:migrate
+rails s
