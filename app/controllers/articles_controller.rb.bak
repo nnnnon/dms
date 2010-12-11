@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   # GET /articles.xml
   def index
     @articles = Article.all
-
+    @tags = ["科技创新","知识产权","科技奖励"]
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @articles }
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.xml
   def new
     @article = Article.new
-
+    # @tags = ["科技奖励","知识产权"]
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @article }
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
   # POST /articles.xml
   def create
     @article = Article.new(params[:article])
-
+    #@article.tag_list = "tt,mm,zz"
     respond_to do |format|
       if @article.save
         format.html { redirect_to(@article, :notice => 'Article was successfully created.') }
@@ -58,6 +58,14 @@ class ArticlesController < ApplicationController
     end
   end
 
+  # GET /search
+  def search
+    @articles = Article.where("tag = ?", params[:tag])
+    respond_to do |format|
+      format.html # search.html.erb
+      format.xml  { render :xml => @article }
+    end
+  end
   # PUT /articles/1
   # PUT /articles/1.xml
   def update

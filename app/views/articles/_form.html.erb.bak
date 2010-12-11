@@ -1,21 +1,47 @@
-<%= form_for([@article, @article.comments.build]) do |f| %> 
+<%= form_for(@article, :html => { :multipart => true }) do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
 
+      <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
- <div class="field"> 
- <%= f.label :commenter %>
- <br />  
- <%= f.text_field :commenter %> 
- </div>  
- 
- <div class="field"> 
- <%= f.label :body %>
- <br /> 
- <%= f.text_area :body %> 
- </div>  
- 
- <div class="actions"> 
- 
- 
- <%= f.submit %>  </div> 
- 
- <% end %> 
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :introduction %><br />
+    <%= f.text_area :introduction %>
+  </div>
+  <div class="field">
+     <%= f.select 'tag', '<option>科技创新</option>
+     <option>知识产权</option><option>科技奖励</option>' %>
+  </div>
+  <div class="field">
+    <%= f.label :upload_person %><br />
+    <%= f.text_field :upload_person %>
+  </div>
+    <div class="field">   
+    <%= f.label :article_file %><br />   
+    <%= f.file_field :article_file %>   
+  </div>   
+
+  <div class="field">
+    <%= f.label :post_date %><br />
+    <%= f.date_select :post_date %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-2010-12-10 05:22:19.515 GMT:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.6.2.1 - (999685): instance a816c00e-012c-ceba-ce7c-000000e5aaa0 
-on database directory C:\Users\Administrator\dms\db\development  with class loader org.jruby.util.JRubyClassLoader@8ef177 
+2010-12-11 05:25:06.157 GMT:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.6.2.1 - (999685): instance a816c00e-012c-d3e3-b814-000000abbff8 
+on database directory C:\Users\Administrator\dms\db\development  with class loader org.jruby.util.JRubyClassLoader@8497f6 
 Loaded from file:c:/jruby-1.5.6/lib/ruby/gems/1.8/gems/jdbc-derby-10.6.2.1-java/lib/derby-10.6.2.1.jar
 java.vendor=Sun Microsystems Inc.
 java.runtime.version=1.6.0_22-b04

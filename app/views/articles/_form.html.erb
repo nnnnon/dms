@@ -20,8 +20,8 @@
     <%= f.text_area :introduction %>
   </div>
   <div class="field">
-    <%= f.label :tag %><br />
-    <%= f.text_field :tag %>
+     <%= f.select 'tag', '<option>科技创新</option>
+     <option>知识产权</option><option>科技奖励</option>' %>
   </div>
   <div class="field">
     <%= f.label :upload_person %><br />

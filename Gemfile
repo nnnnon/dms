@@ -32,3 +32,5 @@ gem 'activerecord-jdbcderby-adapter'
 # end
 gem 'paperclip'
 gem 'authlogic'
+#gem 'acts-as-taggable-on'
+gem 'mongrel'
