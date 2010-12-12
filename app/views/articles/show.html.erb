@@ -1,9 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @article.title %>
-</p>
+<h1>  <%= @article.title %></h1>
+<div id=article>
+  <div class="entry">
 
 <p>
   <b>Introduction:</b>
@@ -31,6 +28,10 @@
 </p>
  <%= link_to @article.title,  @article.article_file.url(:original, false) %> (<%= @article.article_file_content_type%>)  
 
+  </div>
+
+
+</div>
 <h2>Comments</h2> <%= render @article.comments %> 
 
 <h2>Add a comment:</h2> <%= render "comments/form" %> 

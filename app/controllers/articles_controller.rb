@@ -61,7 +61,7 @@ class ArticlesController < ApplicationController
   # GET /search
   def search
     @articles = Article.where("tag = ?", params[:tag])
-    respond_to do |format|
+     respond_to do |format|
       format.html # search.html.erb
       format.xml  { render :xml => @article }
     end

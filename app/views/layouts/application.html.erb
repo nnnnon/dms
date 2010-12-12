@@ -1,15 +1,40 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
- 
-  <title>Dms</title>
-  <%= stylesheet_link_tag :all %>
-
-  <%= csrf_meta_tag %>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>文档管理系统</title>
+  <%= stylesheet_link_tag "scaffold","article", :media => "all" %>
+  <%= javascript_include_tag :defaults %>
 </head>
-<body>
 
-<%= yield %>
+  <div id="banner">
+                文档管理系统
+                <div id ="u">
+                 <%if  current_user %>
+                欢迎你，<%= current_user.email %> 
+                <%= link_to 'logout', user_session_path, :method => 'delete' %> 
+                <% else %>
+                <%=link_to '登录',sigin_path%>
+                 <% end%>
+                 </div>
+  </div>
+  <div id="columns">
+     <div id="side">
+       <%= link_to '全部', '/' %><br/>
+      <%= link_to '科技奖励', '/search?tag=科技奖励' %><br/>
+      <%= link_to '知识产权', '/search?tag=知识产权' %><br/>
+      <%= link_to '科技创新', '/search?tag=科技创新' %><br/>
 
+     </div>
+
+
+  <div id="main">
+
+    <%= yield :layout %>
+  </div>
+</div>
 </body>
 </html>
+
