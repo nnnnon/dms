@@ -1,6 +1,10 @@
 Dms::Application.routes.draw do
   resources :articles do 
      resources :comments
+      collection do
+          get 'search'
+      end
+
   end
   resource :users
   resource :user_session
@@ -56,7 +60,7 @@ Dms::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => "articles#index"
   match 'sigin'=> 'user_sessions#new' 
-  match 'search'=> 'articles#search' 
+# match 'search'=> 'articles#search' 
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

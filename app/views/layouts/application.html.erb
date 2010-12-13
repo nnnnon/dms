@@ -22,11 +22,11 @@
   </div>
   <div id="columns">
      <div id="side">
-       <%= link_to '全部', '/' %><br/>
-      <%= link_to '科技奖励', '/search?tag=科技奖励' %><br/>
-      <%= link_to '知识产权', '/search?tag=知识产权' %><br/>
-      <%= link_to '科技创新', '/search?tag=科技创新' %><br/>
 
+       <%= link_to '全部', '/' %><br/>
+       <% ['科技奖励','知识产权','科技创新'].each do |tag|%>
+      <%= link_to tag, search_articles_path(:tag=>tag) %><br/>
+     <% end %>
      </div>
 
 
