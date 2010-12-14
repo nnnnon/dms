@@ -25,8 +25,10 @@
 
        <%= link_to '全部', '/' %><br/>
        <% ['科技奖励','知识产权','科技创新'].each do |tag|%>
-      <%= link_to tag, search_articles_path(:tag=>tag) %><br/>
+      <%= link_to tag, tag_with_articles_path(:tag=>tag) %><br/>
      <% end %>
+     <%= link_to '搜索', search_path %>
+
      </div>
 
 

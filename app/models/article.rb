@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
      has_attached_file :article_file
      before_create :randomize_file_name
      has_many :comments, :dependent => :destroy
+     #acts_as_solr :fields => [:title, :introduction,:author,:upload_person,:tag]
      #acts_as_taggable
      #acts_as_taggable_on :tag
 

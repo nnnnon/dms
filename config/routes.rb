@@ -2,8 +2,9 @@ Dms::Application.routes.draw do
   resources :articles do 
      resources :comments
       collection do
-          get 'search'
+          get 'tag_with'
       end
+
 
   end
   resource :users
@@ -60,6 +61,7 @@ Dms::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => "articles#index"
   match 'sigin'=> 'user_sessions#new' 
+  match 'search' => "articles#search"
 # match 'search'=> 'articles#search' 
   # See how all your routes lay out with "rake routes"
 

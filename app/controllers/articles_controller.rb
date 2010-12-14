@@ -7,8 +7,8 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.xml
   def index
-    @articles = Article.all
-    @tags = ["科技创新","知识产权","科技奖励"]
+      @articles = Article.all
+    # @tags = ["科技创新","知识产权","科技奖励"]
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @articles }
@@ -58,13 +58,29 @@ class ArticlesController < ApplicationController
     end
   end
 
-  # GET /search
-  def search
+  # GET /tag_with
+  def tag_with
     @articles = Article.where("tag = ?", params[:tag])
      respond_to do |format|
       format.html # search.html.erb
       format.xml  { render :xml => @article }
     end
+  end
+  
+  # GET /search
+  def search
+  @articles = Article.order('title')   
+  @articles = @articles.where("articles.title LIKE :input",{:input =>"%#{params[:title]}%"}) if params[:title]
+  @articles  =  @articles.where("articles.introduction LIKE :input",{:input =>"%#{params[:introduction]}%"}) if params[:introduction]
+      respond_to do |format|
+      format.html # new.html.erb
+    end
+    
+  end
+  def search_result
+    @articles = Article.where("articles.title LIKE :input",{:input => '%发动%'})
+    @articles = Article.where("articles.tag LIKE :input",{:input => '%他%'}) if 3==2
+    
   end
   # PUT /articles/1
   # PUT /articles/1.xml
