@@ -27,7 +27,7 @@
        <% ['科技奖励','知识产权','科技创新'].each do |tag|%>
       <%= link_to tag, tag_with_articles_path(:tag=>tag) %><br/>
      <% end %>
-     <%= link_to '搜索', search_path %>
+     <%= link_to '搜索', :controller => "search", :action => "search" %>
 
      </div>
 

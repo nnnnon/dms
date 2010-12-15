@@ -69,9 +69,11 @@ class ArticlesController < ApplicationController
   
   # GET /search
   def search
-  @articles = Article.order('title')   
-  @articles = @articles.where("articles.title LIKE :input",{:input =>"%#{params[:title]}%"}) if params[:title]
-  @articles  =  @articles.where("articles.introduction LIKE :input",{:input =>"%#{params[:introduction]}%"}) if params[:introduction]
+   if request.post?
+    @articles = Article.order('title')   
+    @articles = @articles.where("articles.title LIKE :input",{:input =>"%#{params[:title]}%"}) if params[:title]
+    @articles  =  @articles.where("articles.introduction LIKE :input",{:input =>"%#{params[:introduction]}%"}) if params[:introduction]
+  end
       respond_to do |format|
       format.html # new.html.erb
     end
